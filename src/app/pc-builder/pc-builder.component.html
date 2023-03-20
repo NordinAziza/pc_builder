@@ -1,0 +1,75 @@
+<div>
+    <h1>Pc-builder</h1>
+    <button (click)="displayCpu = !displayCpu">Cpu</button>
+    <button (click)="displayRam= !displayRam">Ram</button>
+    <button (click)="displayMotherboard = !displayMotherboard">Motherboard</button>
+    <button (click)="displayGpu= !displayGpu">Gpu</button>
+    <button (click)="displayPsu= !displayPsu">Psu</button>
+    <button (click)="displayStorage= !displayStorage">Storage</button>
+
+    <div *ngIf="displayCpu">
+        <ul *ngFor="let cpu of cpus">
+            <li>{{cpu.brand}}</li>
+            <li>{{cpu.name}}</li>
+            <li>{{cpu.price}} €</li>
+            <li> socket {{cpu.socket}}</li>
+            <li>{{cpu.cores}} cores</li>
+            <li>{{cpu.threads}} threads</li>
+            <li>{{cpu.frequency}} Ghz</li>
+            <button (click)="service.addCpu(cpu)"> Add</button>
+        </ul>
+    </div>
+
+    
+    <div *ngIf="displayRam">
+        <ul *ngFor="let ram of rams">
+            <li>{{ram.brand}}</li>
+            <li>{{ram.name}}</li>
+            <li>{{ram.price}} €</li>
+            <li>{{ram.size}} GB</li>
+            <li>{{ram.frequency}} MHz</li>
+        </ul>
+    </div>
+
+    <div *ngIf="displayMotherboard">
+        <ul *ngFor="let motherboard of motherboards">
+            <li>{{motherboard.brand}}</li>
+            <li>{{motherboard.name}}</li>
+            <li>{{motherboard.price}} €</li>
+            <li>socket {{motherboard.socket}}</li>
+            <li></li>
+        </ul>
+    </div>
+
+    <div *ngIf="displayGpu">
+        <ul *ngFor="let gpu of gpus">
+            <li>{{gpu.brand}}</li>
+            <li>{{gpu.name}}</li>
+            <li>{{gpu.price}} €</li>
+            <li>{{gpu.coreFrequency}} MHz</li>
+            <li>{{gpu.memoryFrequency}}MHz</li>
+            <li>{{gpu.vram}} GB</li>
+        </ul>
+    </div>
+
+    <div *ngIf="displayPsu">
+        <ul *ngFor="let psu of psus">
+            <li>{{psu.brand}}</li>
+            <li>{{psu.name}}</li>
+            <li>{{psu.price}} €</li>
+            <li>{{psu.watt}} watt</li>
+        </ul>
+    </div>
+
+    <div *ngIf="displayStorage">
+        <ul *ngFor="let storage of storages">
+            <li>{{storage.brand}}</li>
+            <li>{{storage.name}}</li>
+            <li>{{storage.price}} €</li>
+            <li>{{storage.capacity}} TB</li>
+            <li>{{storage.technologie}}</li>
+        </ul>
+    </div>
+
+    
+</div>

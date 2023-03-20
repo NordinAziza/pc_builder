@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PcBuilderComponent } from './pc-builder/pc-builder.component';
 
 @Component({
   selector: 'app-root',

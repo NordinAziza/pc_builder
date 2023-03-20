@@ -1,0 +1,15 @@
+<div>
+    <ul>
+        <li *ngIf="this.pc.cpu">
+            <ul>
+                <li>{{this.pc.cpu.brand}}</li>
+                <li>{{this.pc.cpu.name}}</li>
+                <li>{{this.pc.cpu.price}} €</li>
+                <li> socket {{this.pc.cpu.socket}}</li>
+                <li>{{this.pc.cpu.cores}} cores</li>
+                <li>{{this.pc.cpu.threads}} threads</li>
+                <li>{{this.pc.cpu.frequency}} Ghz</li>
+            </ul>
+        </li>
+    </ul>
+</div>
