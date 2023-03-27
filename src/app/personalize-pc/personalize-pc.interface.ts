@@ -2,10 +2,12 @@ import { Cpu,Ram,Motherboard,Gpu,Psu,Storage } from '../pc-builder/pc-parts.inte
 
 export interface Pc 
 {
-    cpu:Cpu,
-    ram:Ram,
-    motherboard:Motherboard,
-    gpu:Gpu,
-    psu:Psu,
-    storage:Storage,
+    cpu:Cpu|null ,
+    ram:Ram|null,
+    motherboard:Motherboard|null,
+    gpu:Gpu|null,
+    psu:Psu|null,
+    storage:Storage|null,
+    compatibility:boolean,
+    totalPrice : number,
 }

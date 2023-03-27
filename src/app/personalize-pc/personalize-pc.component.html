@@ -1,15 +1,81 @@
-<div>
-    <ul>
-        <li *ngIf="this.pc.cpu">
+<div class="text-center">
+    <h3 class=" text-center font-bold text-xl">Your personalize pc</h3>
+    <ul class="">
+        <li *ngIf="this.pc.cpu" class="p-2 m-2 border-2 rounded-lg">
             <ul>
+                <li class="font-bold">Cpu:</li>
                 <li>{{this.pc.cpu.brand}}</li>
                 <li>{{this.pc.cpu.name}}</li>
-                <li>{{this.pc.cpu.price}} €</li>
+                <li>{{this.pc.cpu.price}} $</li>
                 <li> socket {{this.pc.cpu.socket}}</li>
                 <li>{{this.pc.cpu.cores}} cores</li>
                 <li>{{this.pc.cpu.threads}} threads</li>
                 <li>{{this.pc.cpu.frequency}} Ghz</li>
+                <li *ngIf="!this.pc.compatibility && this.pc.motherboard " class=" text-red-500">the cpu is not compatible with the motherboard</li>
+                <button (click)="service.removeCpu(this.pc.cpu.price)" 
+                    class=" p-2 border-2 rounded-lg  font-semibold hover:text-red-500 hover:border-red-500">remove</button>
             </ul>
-        </li>
+
+            <li *ngIf="this.pc.ram" class="p-2 m-2 border-2 rounded-lg">
+                <ul>
+                    <li class="font-bold">Ram:</li>
+                    <li>{{this.pc.ram.brand}}</li>
+                    <li>{{this.pc.ram.name}}</li>
+                    <li>{{this.pc.ram.price}} $</li>
+                    <li>{{this.pc.ram.size}} GB</li>
+                    <li>{{this.pc.ram.frequency}} MHz</li>
+                    <button (click)="service.removeRam(this.pc.ram.price)" 
+                        class=" p-2 border-2 rounded-lg  font-semibold  hover:text-red-500 hover:border-red-500">remove</button>
+                </ul>
+            </li>
+            <li *ngIf="this.pc.motherboard" class="p-2 m-2 border-2 rounded-lg">
+                <ul>
+                    <li class="font-bold">Motherboard:</li>
+                    <li>{{this.pc.motherboard.brand}}</li>
+                    <li>{{this.pc.motherboard.name}}</li>
+                    <li>{{this.pc.motherboard.price}} $</li>
+                    <li>socket {{this.pc.motherboard.socket}}</li>
+                    <li *ngIf="!this.pc.compatibility && this.pc.cpu " class=" text-red-500">this motherboard is not compatible with the motherboard</li>
+                    <button (click)="service.removeMotherboard(this.pc.motherboard.price)" 
+                        class=" p-2 border-2 rounded-lg  font-semibold  hover:text-red-500 hover:border-red-500"> remove</button>
+                </ul>
+            </li>
+            <li *ngIf="this.pc.gpu" class="p-2 m-2 border-2 rounded-lg">
+                <ul>
+                    <li class="font-bold">Gpu:</li>
+                    <li>{{this.pc.gpu.brand}}</li>
+                    <li>{{this.pc.gpu.name}}</li>
+                    <li>{{this.pc.gpu.price}} $</li>
+                    <li>{{this.pc.gpu.coreFrequency}} MHz</li>
+                    <li>{{this.pc.gpu.memoryFrequency}}MHz</li>
+                    <li>{{this.pc.gpu.vram}} GB</li>
+                    <button (click)="service.removeGpu(this.pc.gpu.price)" 
+                        class=" p-2 border-2 rounded-lg  font-semibold  hover:text-red-500 hover:border-red-500">remove</button>
+                </ul>
+            </li>
+            <li *ngIf="this.pc.psu" class="p-2 m-2 border-2 rounded-lg">
+                <ul>
+                    <li class="font-bold">Psu:</li>
+                    <li>{{this.pc.psu.brand}}</li>
+                    <li>{{this.pc.psu.name}}</li>
+                    <li>{{this.pc.psu.price}} $</li>
+                    <li>{{this.pc.psu.watt}} watt</li>
+                    <button (click)="service.removePsu(this.pc.psu.price)" 
+                        class=" p-2 border-2 rounded-lg  font-semibold  hover:text-red-500 hover:border-red-500">remove</button>
+                </ul>
+            </li>
+            <li *ngIf="this.pc.storage" class="p-2 m-2 border-2 rounded-lg">
+                <ul>
+                    <li class="font-bold">Storage:</li>
+                    <li>{{this.pc.storage.brand}}</li>
+                    <li>{{this.pc.storage.name}}</li>
+                    <li>{{this.pc.storage.price}} $</li>
+                    <li>{{this.pc.storage.capacity}} TB</li>
+                    <li>{{this.pc.storage.technologie}}</li>
+                    <button (click)="service.removeStorage(this.pc.storage.price)" 
+                        class=" p-2 border-2 rounded-lg  font-semibold  hover:text-red-500 hover:border-red-500">remove</button>
+                </ul>
+            </li>
     </ul>
+    <h3 class="font-semibold">Total: {{this.pc.totalPrice}} $</h3>
 </div>

@@ -1,75 +1,82 @@
 <div>
-    <h1>Pc-builder</h1>
-    <button (click)="displayCpu = !displayCpu">Cpu</button>
-    <button (click)="displayRam= !displayRam">Ram</button>
-    <button (click)="displayMotherboard = !displayMotherboard">Motherboard</button>
-    <button (click)="displayGpu= !displayGpu">Gpu</button>
-    <button (click)="displayPsu= !displayPsu">Psu</button>
-    <button (click)="displayStorage= !displayStorage">Storage</button>
+    <button (click)="displayCpu = !displayCpu" class="p-2 m-2 border-2 rounded-lg text-lg font-semibold hover:bg-[#3795BD]">Cpu</button>
+    <button (click)="displayRam= !displayRam" class="p-2 m-2 border-2 rounded-lg text-lg font-semibold hover:bg-[#3795BD]">Ram</button>
+    <button (click)="displayMotherboard = !displayMotherboard" class="p-2 border-2 rounded-lg text-lg font-semibold hover:bg-[#3795BD]">Motherboard</button>
+    <button (click)="displayGpu= !displayGpu" class="p-2 m-2 border-2 rounded-lg text-lg font-semibold hover:bg-[#3795BD]">Gpu</button>
+    <button (click)="displayPsu= !displayPsu" class="p-2 m-2 border-2 rounded-lg text-lg font-semibold hover:bg-[#3795BD]">Psu</button>
+    <button (click)="displayStorage= !displayStorage" class="p-2 m-2 border-2 rounded-lg text-lg font-semibold hover:bg-[#3795BD]">Storage</button>
 
     <div *ngIf="displayCpu">
-        <ul *ngFor="let cpu of cpus">
-            <li>{{cpu.brand}}</li>
+        <ul *ngFor="let cpu of cpus" class="p-2 m-2 border-2 rounded-lg">
+            <li class="font-semibold">{{cpu.brand}}</li>
             <li>{{cpu.name}}</li>
-            <li>{{cpu.price}} €</li>
+            <li>{{cpu.price}} $</li>
             <li> socket {{cpu.socket}}</li>
             <li>{{cpu.cores}} cores</li>
             <li>{{cpu.threads}} threads</li>
             <li>{{cpu.frequency}} Ghz</li>
-            <button (click)="service.addCpu(cpu)"> Add</button>
+            <button (click)="service.addCpu(cpu)" 
+                class=" p-2 border-2 rounded-lg font-semibold hover:text-green-500 hover:border-green-500"> Add</button> 
         </ul>
     </div>
 
     
     <div *ngIf="displayRam">
-        <ul *ngFor="let ram of rams">
+        <ul *ngFor="let ram of rams" class="p-2 m-2 border-2 rounded-lg">
             <li>{{ram.brand}}</li>
             <li>{{ram.name}}</li>
-            <li>{{ram.price}} €</li>
+            <li>{{ram.price}} $</li>
             <li>{{ram.size}} GB</li>
             <li>{{ram.frequency}} MHz</li>
+            <button (click)="service.addRam(ram)" 
+                class=" p-2 border-2 rounded-lg font-semibold hover:text-green-500 hover:border-green-500"> Add</button>
         </ul>
     </div>
 
     <div *ngIf="displayMotherboard">
-        <ul *ngFor="let motherboard of motherboards">
+        <ul *ngFor="let motherboard of motherboards" class="p-2 m-2 border-2 rounded-lg">
             <li>{{motherboard.brand}}</li>
             <li>{{motherboard.name}}</li>
-            <li>{{motherboard.price}} €</li>
+            <li>{{motherboard.price}} $</li>
             <li>socket {{motherboard.socket}}</li>
-            <li></li>
+            <button (click)="service.addMotherboard(motherboard)" 
+                class=" p-2 border-2 rounded-lg  font-semibold hover:text-green-500 hover:border-green-500"> Add</button>
         </ul>
     </div>
 
     <div *ngIf="displayGpu">
-        <ul *ngFor="let gpu of gpus">
+        <ul *ngFor="let gpu of gpus" class="p-2 m-2 border-2 rounded-lg">
             <li>{{gpu.brand}}</li>
             <li>{{gpu.name}}</li>
-            <li>{{gpu.price}} €</li>
+            <li>{{gpu.price}} $</li>
             <li>{{gpu.coreFrequency}} MHz</li>
             <li>{{gpu.memoryFrequency}}MHz</li>
             <li>{{gpu.vram}} GB</li>
+            <button (click)="service.addGpu(gpu)" 
+                class=" p-2 border-2 rounded-lg  font-semibold hover:text-green-500 hover:border-green-500"> Add</button>
         </ul>
     </div>
 
     <div *ngIf="displayPsu">
-        <ul *ngFor="let psu of psus">
+        <ul *ngFor="let psu of psus" class="p-2 m-2 border-2 rounded-lg">
             <li>{{psu.brand}}</li>
             <li>{{psu.name}}</li>
-            <li>{{psu.price}} €</li>
+            <li>{{psu.price}} $</li>
             <li>{{psu.watt}} watt</li>
+            <button (click)="service.addPsu(psu)" 
+                class=" p-2 border-2 rounded-lg font-semibold hover:text-green-500 hover:border-green-500"> Add</button>
         </ul>
     </div>
 
     <div *ngIf="displayStorage">
-        <ul *ngFor="let storage of storages">
+        <ul *ngFor="let storage of storages" class="p-2 m-2 border-2 rounded-lg">
             <li>{{storage.brand}}</li>
             <li>{{storage.name}}</li>
-            <li>{{storage.price}} €</li>
+            <li>{{storage.price}} $</li>
             <li>{{storage.capacity}} TB</li>
             <li>{{storage.technologie}}</li>
+            <button (click)="service.addStorage(storage)" 
+                class=" p-2 border-2 rounded-lg font-semibold hover:text-green-500 hover:border-green-500"> Add</button>
         </ul>
     </div>
-
-    
 </div>

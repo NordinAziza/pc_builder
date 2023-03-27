@@ -8,8 +8,7 @@ import { PcBuilderService } from '../pc-builder/pc-builder.service';
 })
 export class PersonalizePcComponent {
   pc:Pc | any
-  constructor(private service :PcBuilderService){ }
-  
+  constructor(public service :PcBuilderService){ }
   ngOnInit() {
     this.service.getPc().subscribe(pc => {
       this.pc = pc;

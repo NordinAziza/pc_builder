@@ -7,13 +7,14 @@ import { PcBuilderService } from './pc-builder.service';
   styleUrls: ['./pc-builder.component.css']
 })
 export class PcBuilderComponent {
-  displayCpu: boolean = false;  displayRam: boolean = false; displayMotherboard: boolean = false; displayGpu: boolean = false; displayPsu: boolean = false; displayStorage: boolean = false;
+  displayCpu: boolean = false;  displayRam: boolean = false; displayMotherboard: boolean = false;
+  displayGpu: boolean = false; displayPsu: boolean = false; displayStorage: boolean = false;
 
   cpus: Cpu[] = [
     {
       brand: 'Intel',
       name: 'Core i7-11700K',
-      price: 399.99,
+      price: 399,
       socket: 'LGA1200',
       cores: 8,
       threads: 16,
@@ -23,7 +24,7 @@ export class PcBuilderComponent {
     {
       brand: 'AMD',
       name: 'Ryzen 9 5950X',
-      price: 799.99,
+      price: 799,
       socket: 'AM4',
       cores: 16,
       threads: 32,
@@ -33,7 +34,7 @@ export class PcBuilderComponent {
     {
       brand: 'Intel',
       name: 'Core i5-11600K',
-      price: 279.99,
+      price: 279,
       socket: 'LGA1200',
       cores: 6,
       threads: 12,
@@ -43,7 +44,7 @@ export class PcBuilderComponent {
     {
       brand: 'AMD',
       name: 'Ryzen 5 5600X',
-      price: 299.99,
+      price: 299,
       socket: 'AM4',
       cores: 6,
       threads: 12,
@@ -56,28 +57,28 @@ export class PcBuilderComponent {
       name: 'ASUS ROG Maximus XIII Hero',
       brand: 'ASUS',
       socket: 'LGA1200',
-      price: 499.99,
+      price: 499,
       img:""
     },
     {
       name: 'Gigabyte AORUS X570 Master',
       brand: 'Gigabyte',
       socket: 'AM4',
-      price: 389.99,
+      price: 389,
       img:""
     },
     {
       name: 'MSI MAG B550 Tomahawk',
       brand: 'MSI',
       socket: 'AM4',
-      price: 189.99,
+      price: 189,
       img:""
     },
     {
       name: 'ASRock B560M Steel Legend',
       brand: 'ASRock',
       socket: 'LGA1200',
-      price: 139.99,
+      price: 139,
       img:""
     },
   ];
@@ -88,7 +89,7 @@ export class PcBuilderComponent {
       name: 'Vengeance RGB Pro',
       size: 32,
       frequency: 3200,
-      price: 199.99,
+      price: 199,
       img:""
     },
     {
@@ -96,7 +97,7 @@ export class PcBuilderComponent {
       name: 'Trident Z Neo',
       size: 16,
       frequency: 3600,
-      price: 129.99,
+      price: 129,
       img:""
     },
     {
@@ -104,7 +105,7 @@ export class PcBuilderComponent {
       name: 'Ballistix RGB',
       size: 32,
       frequency: 3200,
-      price: 179.99,
+      price: 179,
       img:""
     },
     {
@@ -112,7 +113,7 @@ export class PcBuilderComponent {
       name: 'T-Force Delta RGB',
       size: 16,
       frequency: 3200,
-      price: 89.99,
+      price: 89,
       img:""
     },
   ]
